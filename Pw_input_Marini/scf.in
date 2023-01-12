@@ -1,0 +1,38 @@
+&control
+  prefix = 'WSe2'
+  calculation = 'scf'
+  outdir='./'
+  pseudo_dir='/home/marini/bin/modules_and_scripts/pseudo'
+  verbosity='high'
+/&end
+
+&system
+  ibrav = 4
+  celldm(1) = 6.1983017192617
+  celldm(3) = 3.95
+  ntyp = 2
+  nat  = 6
+  ecutwfc = 50
+  force_symmorphic= .TRUE.  
+  noncolin = .true. 
+  lspinorb = .true. 
+/&end
+
+&electrons
+  conv_thr = 1.0d-6
+/&end
+
+ATOMIC_SPECIES
+Se 32.065 Se_FR.upf
+W 183.84 W_FR.upf
+  
+ATOMIC_POSITIONS crystal
+W 0.333333000   0.666667000   0.250000000
+W 0.666667000   0.333333000   0.750000000
+Se 0.333333000   0.666667000   0.621148493
+Se 0.666667000   0.333333000   0.121148493
+Se 0.333333000   0.666667000   0.878851507
+Se 0.666667000   0.333333000   0.378851507
+ 
+K_POINTS (automatic)
+ 9 9 1 1 1 0
